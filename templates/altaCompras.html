@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% with  messages =  get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages%}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith%}
+
+    <h1>Importar Ordenes de Compra</h1>
+    <form class="" action="data" method="POST">
+        <input type="file" name="csvfile" value="">
+        <br>
+        <br>
+        <br>
+        <input type="submit" name="" value="Submit">
+    </form>
+{% endblock %}
